@@ -28,17 +28,17 @@ create table employees(
 create table dept_manager(
     dept_no varchar(4) NOT NULL,
     emp_no varchar(6) NOT NULL,
-	primary key (dept_no,emp_no),
-     FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
-	 FOREIGN KEY (emp_no) REFERENCES employees(emp_no));
+    primary key (dept_no,emp_no),
+    FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
+    FOREIGN KEY (emp_no) REFERENCES employees(emp_no));
 
 
 --drop table dept_emp CASCADE ;
 create table dept_emp(
     emp_no varchar(6) NOT NULL,
     dept_no varchar(4) NOT NULL,
-	primary key (dept_no,emp_no),
-	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
+    primary key (dept_no,emp_no),
+    FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
     FOREIGN KEY (emp_no) REFERENCES employees(emp_no));
 
 
@@ -46,4 +46,5 @@ create table dept_emp(
 create table salaries(
     emp_no varchar(6) NOT NULL,
     salary  int,
+    primary key (emp_no),
     FOREIGN KEY (emp_no) REFERENCES employees(emp_no));
